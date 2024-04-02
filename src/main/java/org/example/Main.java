@@ -20,13 +20,13 @@ public class Main {
         String result = serializeObjectToJSON(p1);
 
         // Десериализуем JSON в объект
-        Person person = deSerializeObjectToJSON(result);
+        Person person = deSerializeObjectFromJSON(result);
 
         System.out.println(p1.equals(person));
 
     }
 
-    private static Person deSerializeObjectToJSON(String jsonStr) {
+    private static Person deSerializeObjectFromJSON(String jsonStr) {
         Gson gson = new Gson();
         Person person =gson.fromJson(jsonStr, Person.class);
         System.out.println(person);
